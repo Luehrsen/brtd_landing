@@ -103,9 +103,10 @@ module.exports = function(grunt) {
 	    watch: {
 		    js: {
 			    files: ['build/**/*.js'],
-			    tasks: ['handle_js'],
+			    tasks: ['js'],
 				options: {
 					nospawn: true,
+					livereload: true
 				},
 		    },
 			less: {
@@ -113,6 +114,7 @@ module.exports = function(grunt) {
 				tasks: ['less'],
 				options: {
 					nospawn: true,
+					livereload: true
 				},
 			},
 			assets: {
@@ -120,6 +122,7 @@ module.exports = function(grunt) {
 				tasks: ['copy:assets'],
 				options: {
 					nospawn: true,
+					livereload: true
 				},
 			},
 			html: {
@@ -127,13 +130,8 @@ module.exports = function(grunt) {
 				tasks: ['htmlmin:dist'],
 				options: {
 					nospawn: true,
-				},
-			},
-			livereload: {
-				files: ['dist/**/*.css', 'dist/js/*.min.js', 'dist/**/*.html'], // Watch all files
-				options: {
 					livereload: true
-				}
+				},
 			},
 	    },
 

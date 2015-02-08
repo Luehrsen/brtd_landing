@@ -1,0 +1,9 @@
+<div class="form-grop">
+	<input type="text" ng-model="playerName" ng-change="updatePlayerName()" name="playerName" class="formControl">
+</div>
+
+<ul class="playerList">
+	<li ng-repeat="c in playerResults.character_name_list">
+		{{c.name.first}}
+	</li>
+</ul>
