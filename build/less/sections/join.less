@@ -1,0 +1,47 @@
+section.join-card {
+	background-color: #fff;
+	background-image: url("../img/bg/join_bg.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	h2.title {
+		color: #fff;
+		text-shadow: 0 0 3px #000, 0 0 6px #000, 0 0 12px #000;
+		text-transform: uppercase;
+		font-weight: 300;
+		text-align: center;
+
+		.red {
+			color: @TrColor;
+		}
+	}
+
+	div.button {
+		text-align: center;
+		margin: 50px 0 0 0;
+
+		.btn {
+			text-transform: uppercase;
+			padding: 12px 50px;
+		}
+	}
+}
+
+section.join-card:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+
+	background: url("../img/stripes.png");
+}
+
+@media (max-width: @screen-xs-max) {
+	section.join-card {
+		background-image: url("../img/bg/join_bg_xs.jpg");
+	}
+}

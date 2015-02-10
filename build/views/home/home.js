@@ -3,7 +3,7 @@
 
 function configHome( $stateProvider ) {
   $stateProvider.state( 'home', {
-    url: '/home',
+	url: '/home',
     views: {
       "main": {
         controller: 'homeCtrl',
@@ -16,6 +16,7 @@ function configHome( $stateProvider ) {
 
 function homeCtrl($scope, CharacterName){
 	$scope.playerResults = {};
+	$scope.joinURL = "http://www.brtd.net/join-us";
 
 	$scope.updatePlayerName = function(){
 		if($scope.playerName.length > 3){

@@ -1,0 +1,119 @@
+body, html {
+	height: 100%;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+// The NEXT SECTION Button
+a.nextsection {
+	display: block;
+	position: absolute;
+	bottom: 5px;
+	line-height: 25px;
+	vertical-align: middle;
+	left: 0;
+	right: 0;
+	z-index: 999;
+
+	text-align: center;
+	color: rgba(255, 255, 255, 0.5);
+	text-decoration: none;
+	text-transform: uppercase;
+
+	.transition(color .5s);
+
+	span.text {
+		display: block;
+	}
+
+	span.chevron {
+		font-size: 2em;
+		position: relative;
+		top: 0;
+		.transition(top .5s);
+	}
+}
+
+a.nextsection:hover {
+	color: rgba(255, 255, 255, 0.9);
+
+	span.chevron {
+		top: 5px;
+	}
+}
+
+// Section FULL HEIGHT
+section.full-height {
+	display: table;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+
+	.box-shadow(0 0 45px 0 rgba(0, 0, 0, 0.5));
+	border-top: 1px solid @TrColorDark;
+
+	div.container {
+		display: table-cell;
+		vertical-align: middle;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+
+// Side Nav
+div.side_nav {
+	display: table;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+
+	width: 40px;
+	height: 100%;
+
+	z-index: 100;
+}
+
+div.side_nav_container {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+
+	a {
+		color: #fff;
+		text-shadow: 0 0 2px #000;
+		text-decoration: none;
+		position: relative;
+		display: block;
+		padding: 5px 0;
+	}
+
+	a:after {
+		content:attr(title);
+		white-space: nowrap;
+		display: block;
+		position: absolute;
+		right: 30px;
+		top: 3px;
+		background: #f00;
+		padding: 2px 5px;
+		border-radius: 5px;
+		.box-shadow(0 0 1px #000);
+		#gradient > .vertical(#fff, #ddd);
+		font-size: 0.75em;
+		line-height: 1.333em;
+		color: #666;
+		text-shadow: none;
+		.opacity(0);
+		.transition(all .2s);
+	}
+
+	a:hover:after {
+		.opacity(1);
+		right: 40px;
+	}
+}

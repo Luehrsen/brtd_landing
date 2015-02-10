@@ -1,0 +1,132 @@
+section.title-card {
+	background: #000 url("../img/bg/title_bg.jpg") center center no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+
+	overflow: hidden;
+
+	div.title {
+		position: relative;
+		z-index: 10;
+
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		h1 {
+			margin: 0;
+			padding: 0;
+
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 3em;
+			line-height: 1.5em;
+
+			text-shadow: 0 0 2px #000, 0 0 10px #000;
+
+			color: #fff;
+
+			cursor: default;
+
+			span.red {
+				color: @TrColor;
+				text-shadow: 0 0 5px #666;
+			}
+		}
+
+		h2 {
+			margin: 0;
+			padding: 0;
+
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 300;
+			font-size: 1em;
+			line-height: 1.5em;
+
+			text-shadow: 0 0 2px #000, 0 0 10px #000;
+
+			color: #fff;
+
+			cursor: default;
+		}
+	}
+
+
+	div.button {
+		text-align: center;
+		position: absolute;
+
+		top: 65%;
+		left: 0;
+		right: 0;
+
+		z-index: 10;
+
+		a.btn {
+			text-transform: uppercase;
+			padding: 6px 50px;
+		}
+	}
+
+
+	div.yt-player {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 0;
+		overflow: hidden;
+
+		#title-card-player {
+
+		}
+
+		div.video-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			background: url("../img/title_bg.png") center center;
+		}
+	}
+}
+
+// Responsive shit for phones
+@media (max-width: @screen-xs-max) {
+	section.title-card {
+		background-image: url("../img/bg/title_bg_xs.jpg");
+		display: block;
+		background-attachment: scroll;
+
+		div.title {
+			h1 {
+				line-height: 1em;
+				margin-bottom: 25px;
+			}
+
+			h2 {
+				line-height: 1.333em;
+				margin-bottom: 25px;
+			}
+
+			span.breaker {
+				display: block;
+				height: 0px;
+				text-indent: -99999px;
+			}
+		}
+
+		div.button {
+			position: relative;
+			top: 0;
+		}
+	}
+}

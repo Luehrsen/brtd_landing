@@ -1,5 +1,7 @@
 // @depend "vendor/angular-ui-router/release/angular-ui-router.js"
 // @depend "common/dbgCensus.ng.js"
+// @depend "common/fullheightDirective.ng.js"
+
 // @depend "views/home/home.js"
 
 (function(){
@@ -13,13 +15,19 @@ function appCtrl ( $scope, $location ) {
   });
 };
 
+function appConfig(  $stateProvider, $urlRouterProvider ){
+	$urlRouterProvider.otherwise( '/home' );
+};
+
 
 angular.module("brtdLanding", [
 			'ui.router',
 			'dbgCensus',
+			'lh.fullheight',
 			'brtdLanding.home'
 		])
 		.controller( 'appCtrl', ['$scope', '$location', appCtrl])
+		.config(['$stateProvider', '$urlRouterProvider', appConfig])
 		;
 
 })(angular);
